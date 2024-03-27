@@ -1,0 +1,136 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="main-wrapper main-wrapper-2">
+        
+        <div class="breadcrumb-area bg-gray-4 breadcrumb-padding-1">
+            <div class="container">
+                <div class="breadcrumb-content text-center">
+                    <h2 data-aos="fade-up" data-aos-delay="200">PRODUCTS</h2>
+                    <ul data-aos="fade-up" data-aos-delay="400">
+                        <li><a href="{% url 'web:index' %}">Home</a></li>
+                        <li><i class="ti-angle-right"></i></li>
+                        <li>Products </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="breadcrumb-img-1" data-aos="fade-right" data-aos-delay="200">
+                <img src="" alt="">
+            </div>
+            <div class="breadcrumb-img-2" data-aos="fade-left" data-aos-delay="200">
+                <img src="" alt="">
+            </div>
+        </div>
+        <div class="product-details-area pb-70 pt-100">
+            <!--first section-->
+            {% for product in products %}
+            {% if forloop.counter|divisibleby:2 %}
+
+            <div class="container second-product">
+                <div class="row">
+
+                    <div class="col-lg-5">
+                        <div class="product-details-content pt-small-none" data-aos="fade-up" data-aos-delay="200">
+                            <span class="loqz-class span-title"> {{product.title}}</span>
+                            <h2> <span class="second-tittle">{{product.sub_title|truncatechars:52}}</span></h2>
+                            <div class="product-details-price">
+
+                            </div>
+                            <div class="">
+                                <p class="description">{{product.description|safe|truncatechars:330}}</p>
+                            </div>
+                            <div class="product-details-action-wrap ">
+                                <div class="single-product-cart btn-hover">
+                                    <a href="{{product.get_absolute_url}}" class="text-center">VIEW DETAIL</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-lg-7">
+                        
+                        <div class="row">
+                           
+                            <div class="col-md-6 col-12 col-sm-6">
+                                <div class="easyzoom-style mb-30" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="easyzoom easyzoom--overlay">
+                                        <a>
+                                            <img src="{{product.main_image.url}}" alt="hhh">
+                                        </a>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                           
+                            <div class="col-md-6 col-12 col-sm-6">
+                                <div class="easyzoom-style mb-30" data-aos="fade-up" data-aos-delay="400">
+                                    <div class="easyzoom easyzoom--overlay">
+                                        <a >
+                                            <img src="{{product.sub_image.url}}" alt="">
+                                        </a>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div> 
+                    
+                </div>
+            </div>
+           
+            {% else %}
+                <!--second section-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="row">
+                               
+                                <div class="col-md-6 col-12 col-sm-6">
+                                    <div class="easyzoom-style mb-30" data-aos="fade-up" data-aos-delay="200">
+                                        <div class="easyzoom easyzoom--overlay">
+                                            <a >
+                                                <img src="{{product.sub_image.url}}" alt="hhh">
+                                            </a>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                               
+                                <div class="col-md-6 col-12 col-sm-6">
+                                    <div class="easyzoom-style mb-30" data-aos="fade-up" data-aos-delay="400">
+                                        <div class="easyzoom easyzoom--overlay">
+                                            <a >
+                                                <img src="{{product.main_image.url}}" alt="">
+                                            </a>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-5">
+                            <div class="product-details-content pt-small-none" data-aos="fade-up" data-aos-delay="200">
+                                <span class="loqz-class span-title">{{product.title}}</span>
+                                <h2><span class="second-tittle">{{product.sub_title|truncatechars:52}} </span></h2>
+                                <div class="product-details-price">
+    
+                                </div>
+                                <div class="product-details-review description">
+                                    <p class="description">{{product.description|safe|truncatechars:330}}</p>
+                                </div>
+                                <div class="product-details-action-wrap">
+                                    <div class="single-product-cart btn-hover">
+                                        <a href="{{product.get_absolute_url}}" class="text-center">VIEW DETAIL</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% endfor %}
+
+           {% endblock %}

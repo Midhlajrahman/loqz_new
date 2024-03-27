@@ -1,0 +1,50 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="main-wrapper main-wrapper-2">
+    <div class="breadcrumb-area bg-gray-4 breadcrumb-padding-1">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <h2 data-aos="fade-up" data-aos-delay="200">UPDATES</h2>
+                <ul data-aos="fade-up" data-aos-delay="400">
+                    <li><a href="{% url 'web:index' %}">Home</a></li>
+                    <li><i class="ti-angle-right"></i></li>
+                    <li>updates </li>
+                </ul>
+            </div>
+        </div>
+        <div class="breadcrumb-img-1" data-aos="fade-right" data-aos-delay="200">
+            <img src="" alt="">
+        </div>
+        <div class="breadcrumb-img-2" data-aos="fade-left" data-aos-delay="200">
+            <img src="" alt="">
+        </div>
+    </div>
+    <div class="blog-area pt-100 pb-100">
+        <div class="container">
+            <div class="row">
+                {% for update in updates %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-wrap mb-50" data-aos="fade-up" data-aos-delay="200">
+                        <div class="blog-img-date-wrap mb-25">
+                            <div class="blog-img">
+                                <a href="{{update.get_absolute_url}}"><img
+                                        src="{{update.image.url}}" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <ul>
+                                    <li><a href="{{update.get_absolute_url}}"></a><i class="fa fa-calendar"></i></li>
+                                    <li><a href="{{update.get_absolute_url}}"> {{update.date}}</a></li>
+                                </ul>
+                            </div>
+                            <h3><a href="{{update.get_absolute_url}}">{{update.title}}</h3></a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endblock %}

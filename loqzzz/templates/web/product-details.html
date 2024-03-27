@@ -1,0 +1,175 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+
+    <div class="main-wrapper main-wrapper-2">
+       
+     
+        <div class="breadcrumb-area bg-gray-4 breadcrumb-padding-1">
+            <div class="container">
+                <div class="breadcrumb-content text-center">
+                    <h2 data-aos="fade-up" data-aos-delay="200">Product Details</h2>
+                    <ul data-aos="fade-up" data-aos-delay="400">
+                        <li><a href="{% url 'web:index' %}">Home</a></li>
+                        <li><i class="ti-angle-right"></i></li>
+                        <li>Product Details</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="breadcrumb-img-1" data-aos="fade-right" data-aos-delay="200">
+                <img src="" alt="">
+            </div>
+            <div class="breadcrumb-img-2" data-aos="fade-left" data-aos-delay="200">
+                <img src="" alt="">
+            </div>
+        </div>
+        <div class="product-details-area pb-100 pt-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="product-details-img-wrap product-details-vertical-wrap" data-aos="fade-up"
+                            data-aos-delay="200">
+                            <div class="product-details-small-img-wrap">
+                                <div class="swiper-container product-details-small-img-slider-1 pd-small-img-style">
+                                    <div class="swiper-wrapper">
+                                    {% for product in product.get_image %}
+                                        <div class="swiper-slide">
+                                            <div class="product-details-small-img">
+                                                <img src="{{product.image.url}}"
+                                                    alt="Product Thumnail">
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="pd-prev pd-nav-style"> <i class="ti-angle-up"></i></div>
+                                <div class="pd-next pd-nav-style"> <i class="ti-angle-down"></i></div>
+                            </div>
+                            <div class="swiper-container product-details-big-img-slider-1 pd-big-img-style">
+                                <div class="swiper-wrapper">
+                                    {% for product in product.get_image %}
+                                    <div class="swiper-slide">
+                                        <div class="easyzoom-style">
+                                            <div class="easyzoom easyzoom--overlay">
+                                                <a href="{{product.image.url}}">
+                                                    <img src="{{product.image.url}} " alt="">
+                                                </a>
+                                            </div>
+                                            <a class="easyzoom-pop-up img-popup"
+                                                href="{{product.image.url}}">
+                                                <i class="pe-7s-search"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="product-details-content" data-aos="fade-up" data-aos-delay="400">
+                            <span class="loqz-class span-title">{{product.title}}</span>
+                            <h2>{{product.sub_title}}</h2>
+                           
+                            <span class="product-details-2 description">{{product.description}}
+                                    <div class="customer-zone ">
+                                <div class="row mt-4">
+                                    {% for product in product.get_feature %}
+                                         <div class="col-lg-6 col-md-6 col-sm-12 ">
+                                            <p class="cart-page-title">{{product.feature}}<a class="checkout-click1" href="#"></a></p>
+                                        </div>
+                                     {% endfor %}
+                                     </div>
+                                </div>
+                                
+                                           
+                            </span>
+                         </div>
+                     </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="description-review-area pb-40">
+      
+    </div>
+    <div class="related-product-area pb-95">
+        <div class="container">
+            <div class="section-title-2 st-border-center text-center mb-75" data-aos="fade-up" data-aos-delay="200">
+                <h2>Products</h2>
+            </div>
+            <div class="related-product-active swiper-container">
+                <div class="swiper-wrapper">
+                    {% for  other_product in other_products %}
+                    <div class="swiper-slide">
+                        <div class="product-wrap" data-aos="fade-up" data-aos-delay="200">
+                            <div class="product-img img-zoom mb-25">
+                                <a href="{{other_product.get_absolute_url}}">
+                                    <img src="{{other_product.main_image.url}}" alt="">
+                                </a>
+                               
+                                <div class="product-action-2-wrap">
+                                    <button class="product-action-btn-2" title="Add To Cart"><i class="-cart"></i>
+                                        {{other_product.title}}</button>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    {% comment %} <div class="swiper-slide">
+                        <div class="product-wrap" data-aos="fade-up" data-aos-delay="400">
+                            <div class="product-img img-zoom mb-25">
+                                <a href="product-details-group.html">
+                                    <img src="{% static 'web/assets/images/Products/SMART_FABLOCK3.png'%}" alt="">
+                                </a>
+                               
+                                <div class="product-action-2-wrap">
+                                    <button class="product-action-btn-2" title="Add To Cart"><i class="-cart"></i> SMART
+                                        FABLOCK</button>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div> {% endcomment %}
+                    {% comment %} <div class="swiper-slide">
+                        <div class="product-wrap" data-aos="fade-up" data-aos-delay="600">
+                            <div class="product-img img-zoom mb-25">
+                                <a href="product-details-group.html">
+                                    <img src="{% static 'web/assets/images/Products/ALUCORNER3.png'%}" alt="">
+                                </a>
+                                
+                                <div class="product-action-2-wrap">
+                                    <button class="product-action-btn-2" title="Add To Cart"><i class="-cart"></i>
+                                        ALUCORNER</button>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div> {% endcomment %}
+
+
+
+                    {% comment %} <div class="swiper-slide">
+                        <div class="product-wrap" data-aos="fade-up" data-aos-delay="800">
+                            <div class="product-img img-zoom mb-25">
+                                <a href="product-details-group.html">
+                                    <img src="{% static 'web/assets/images/Products/FISH_CLEAT1.png'%}" alt="">
+                                </a>
+                               
+                                <div class="product-action-2-wrap">
+                                    <button class="product-action-btn-2" title="Add To Cart"><i class="-cart"></i>FISH
+                                        CLEAT</button>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div> {% endcomment %}
+                  </div>
+            </div>
+        </div>
+    </div>
+
+   {% endblock %}

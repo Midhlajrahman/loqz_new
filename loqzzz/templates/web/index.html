@@ -1,0 +1,277 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="slider-area">
+    <div class="slider-active swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="intro-section slider-height-1 slider-content-center bg-img single-animation-wrap slider-bg-color-1"
+                    style="background-image:url(static/web/assets/images/slider/slider-bg-1.jpg)">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="slider-content-1 slider-animated-1">
+                                    <h3 class="animated">new arrival</h3>
+                                    <h1 class="animated">Find comfort, style, and durability in one elegant package.
+                                    </h1>
+                                    <div class="slider-btn btn-hover">
+                                        <a href="{% url 'web:product' %}" class="primary_btn animated text-center">
+                                            VIEW MORE <i class=" ti-arrow-right "></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="hero-slider-img-1 slider-animated-1">
+
+                                    <div class="Sirv"
+                                        data-src="https://wsodqjnw.sirv.com/Spins/Door3/ReDoor2/ReDoor2.spin"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="about-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="home-single-product-img" data-aos="fade-up" data-aos-delay="200">
+                    <a href="{% url 'web:product' %}"><img
+                            src="{%  static  'web/assets/images/Products/Web_Photo_Editor.jpg'%}" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="home-single-product-content">
+                    <span class="loqz-class span-title" data-aos="fade-up" data-aos-delay="900">LOQZ</span>
+                    <h2 data-aos="fade-up" data-aos-delay="200"> It's all about comfort, design, and durability</h2>
+                    <!-- <h3 data-aos="fade-up" data-aos-delay="400">$20.25</h3> -->
+                    <p data-aos="fade-up" data-aos-delay="600" class="description">
+                        At Loqz, we're dedicated to crafting innovative solutions that redefine comfort, elevate design, and ensure durability in every aspect of your life. Join us on our journey to create a world where comfort is not just a luxury but a fundamental part of everyday living.
+                    </p>
+
+                    <div class="product-details-action-wrap" data-aos="fade-up" data-aos-delay="1000">
+
+                        <div class="slider-btn btn-hover mt-4">
+                            <a href="{% url 'web:about' %}" class="primary_btn animated text-center">
+                                ABOUT MORE <i class=" ti-arrow-right "></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="product-area pb-95 mt-5">
+    <div class="container">
+        <div class="section-border section-border-margin-1" data-aos="" data-aos-delay="200">
+            <div class="section-title-timer-wrap bg-white">
+                <div class="section-title-1">
+                    <h2>FABLOCK ACE</h2>
+                </div>
+
+            </div>
+        </div>
+        <div class="product-slider-active-1 swiper-container">
+            <div class="swiper-wrapper mt-5">
+                {% for product in fablock_ace %}
+                {% for product_image in product.get_image %}
+                <div class="swiper-slide">
+                    <div class="product-wrap" data-aos="fade-up" data-aos-delay="200">
+                        <div class="product-img img-zoom mb-25">
+                            <a href="{{ product.get_absolute_url}}">
+                                <img src="{{ product_image.image.url }}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endfor %}
+
+             
+            </div>
+            <div class="product-prev-1 product-nav-1" data-aos="fade-up" data-aos-delay="200"><i
+                    class="fa fa-angle-left"></i></div>
+            <div class="product-next-1 product-nav-1" data-aos="fade-up" data-aos-delay="200"><i
+                    class="fa fa-angle-right"></i></div>
+        </div>
+    </div>
+</div>
+
+ {% comment %} <div id="beforeAfterImgContainer">
+   
+    <img src="{%  static  'web/assets/images/Products/after-image.png'%}" />
+   
+    <img src="{%  static  'web/assets/images/Products/before-image.png'%}" />
+</div> {% endcomment %}
+ {% comment %} <div class="container">
+<div class="before-after">
+    <img src="{%  static  'web/assets/images/Products/before-image.png'%}" alt="Before Image" class="before">
+    <img src="{%  static  'web/assets/images/Products/after-image.png'%}" alt="After Image" class="after">
+    <span class="overlay"></span>
+  </div>
+
+</div> {% endcomment %}
+<div class="container">
+    <div id="beforeAfterImgContainer">
+   
+        <img src="{%  static  'web/assets/images/Products/after-image.jpg'%}" />
+       
+        <img src="{%  static  'web/assets/images/Products/before-image-new.jpg'%}" />
+    </div>
+</div>
+
+  
+
+<div class="service-area pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-30">
+                <div class="service-wrap" data-aos="" data-aos-delay="200">
+                    <div class="service-img">
+                        <img src="{%  static  'web/assets/images/icon-img/car.png'%}" alt="">
+                    </div>
+                    <div class="service-content">
+                        <h3>10+ years of experience </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-30">
+                <div class="service-wrap" data-aos="" data-aos-delay="400">
+                    <div class="service-img">
+                        <img src="{%  static  'web/assets/images/icon-img/time.png'%}" alt="">
+                    </div>
+                    <div class="service-content">
+                        <h3>24/7 Customer support</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-30">
+                <div class="service-wrap" data-aos="" data-aos-delay="600">
+                    <div class="service-img">
+                        <img src="{%  static  'web/assets/images/icon-img/dollar.png'%}" alt="">
+                    </div>
+                    <div class="service-content">
+                        <h3>Advanced technology </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-30">
+                <div class="service-wrap" data-aos="" data-aos-delay="800">
+                    <div class="service-img">
+                        <img src="{%  static  'web/assets/images/icon-img/discount.png'%}" alt="">
+                    </div>
+                    <div class="service-content">
+                        <h3>Installation management</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="product-area pb-95">
+    <div class="container">
+        <div class="section-border section-border-margin-1" data-aos="" data-aos-delay="200">
+            <div class="section-title-timer-wrap bg-white">
+                <div class="section-title-1">
+                    <h2>Smart Fablock</h2>
+                </div>
+
+            </div>
+        </div>
+        <div class="product-slider-active-1 swiper-container">
+            <div class="swiper-wrapper mt-5">
+                {% for product in smart_fablock_plus %}
+                {% for product_image in product.get_image %}
+                <div class="swiper-slide">
+                    <div class="product-wrap" data-aos="" data-aos-delay="200">
+                        <div class="product-img img-zoom mb-25">
+                            <a href="{{ product.get_absolute_url}}">
+                                <img src="{{ product_image.image.url }}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endfor %}
+
+            </div>
+            <div class="product-prev-1 product-nav-1" data-aos="" data-aos-delay="200"><i class="fa fa-angle-left"></i>
+            </div>
+            <div class="product-next-1 product-nav-1" data-aos="" data-aos-delay="200"><i class="fa fa-angle-right"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="testimonial-area testmoial-div">
+    <div class="container">
+        <div class="section-title-2 st-border-center text-center mb-" data-aos="" data-aos-delay="200">
+            <h2>Testimonial</h2>
+        </div>
+         <div class="testimonial-active swiper-container">
+            <div class="swiper-wrapper">
+                {% for testimonial in testimonials %}
+                <div class="swiper-slide">
+                    <div class="single-testimonial" data-aos="" data-aos-delay="200">
+                        <div class="testimonial-img">
+                            <img src="{{ testimonial.image.url}}" alt="">
+                        </div>
+                        <p>{{testimonial.description}}</p>
+                        <div class="testimonial-info">
+                            <h4>{{testimonial.name}}</h4>
+                            <span> {{testimonial.positio}}</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div> 
+            
+    </div>
+</div>
+<div class="blog-area update-area pb-100">
+    <div class="container">
+        <div class="section-title-2 st-border-center text-center mb-75" data-aos="" data-aos-delay="200">
+            <h2>LATEST NEWS</h2>
+        </div>
+        <div class="row">
+            {% for update in updates %}
+            <div class="col-lg-3 col-md-6">
+                <div class="blog-wrap mb-30" data-aos="" data-aos-delay="200">
+                    <div class="blog-img-date-wrap mb-25">
+                        <div class="blog-img">
+                            <a href="{{update.get_absolute_url}}">
+                                <img src="{{update.image.url}}" alt=""></a>
+                        </div>
+
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <ul>
+                                <li><a href="{{update.get_absolute_url}}"></a><i class="fa fa-calendar"></i></li>
+                                <li><a href="{{update.get_absolute_url}}">{{update.date}}</a></li>
+                            </ul>
+                        </div>
+                        <h3><a href="{{update.get_absolute_url}}">{{update.title}}</a></h3>
+                        <div class="blog-btn">
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    {% endblock %}

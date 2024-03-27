@@ -1,0 +1,204 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="main-wrapper main-wrapper-2">
+        <div class="breadcrumb-area bg-gray-4 breadcrumb-padding-1">
+            <div class="container">
+                <div class="breadcrumb-content text-center">
+                    <h2 data-aos="fade-up" data-aos-delay="200">About Us</h2>
+                    <ul data-aos="fade-up" data-aos-delay="400">
+                        <li><a href="{% url 'web:index' %}">Home</a></li>
+                        <li><i class="ti-angle-right"></i></li>
+                        <li>About Us</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="breadcrumb-img-1" data-aos="fade-right" data-aos-delay="200">
+                <img src="" alt="">
+            </div>
+            <div class="breadcrumb-img-2" data-aos="fade-left" data-aos-delay="200">
+                <img src="" alt="">
+            </div>
+        </div>
+        <div class="about-us-area pt-100 pb-100">
+            <div class="container">
+                <div class="row align-items-center flex-row-reverse">
+                    <div class="col-lg-6">
+                        <div class="about-content mt-5">
+                            <span class="span-title"  data-aos="fade-up" data-aos-delay="300">ABOUT</span>
+                            <h1 data-aos="fade-up" data-aos-delay="300">Making Life Cozier: Inside LOQZ's Story <SPan class="loqz-class">
+                                 </SPan>- </h1>
+                            <p data-aos="fade-up" data-aos-delay="400" class="description">LOQZ, an emerging brand in the Indian market, offers innovative products aimed at enhancing comfort. We believe in exploring infinite possibilities to create major innovations. With pride, we serve satisfied customers, fabricators, dealers, distributors, and architects, committed to unbeatable quality and service. We prioritize environmental responsibility and anticipate bringing more effective innovations.
+                            </p>
+                            <p class="mrg-inc" data-aos="fade-up" data-aos-delay="500"></p>
+                            <!-- <div class="btn-style-3 btn-hover" data-aos="fade-up" data-aos-delay="600">
+                                <a class="btn border-radius-none" href="product-details.html">Shop Now</a>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-img" data-aos="fade-up" data-aos-delay="400">
+                            <img src="{% static 'web/assets/images/Products/3in1-2.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     <div class="container">
+        <div class="banner-area pb-100">
+            <div class="bg-img bg-padding-2" style="background-image:url({% static "web/assets/images/Products/about-img1.png" %})">
+                    <div class="banner-content-5 banner-content-5-static">
+                        <span data-aos="fade-up" data-aos-delay="200"
+                            style="color: rgb(255, 255, 255); font-weight: 500;"> Explore Loqz in every corner of your
+                            home.</span>
+                      
+                    </div>
+            </div>
+        </div>
+    </div>
+       
+        <div class="team-area pt-100 pb-70">
+            <div class="container">
+                <div class="section-title-2 st-border-center text-center mb-75" data-aos="fade-up" data-aos-delay="200">
+                    <h2>OUR TEAM</h2>
+                </div>
+                
+                <div class="row">
+                    {% for team in teams %}
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-12">
+                        <div class="single-team-wrap text-center mb-30" data-aos="fade-up" data-aos-delay="200">
+                            <img src="{{team.image.url}}" alt="">
+                            <div class="team-info-position">
+                                <div class="team-info">
+                                    <h3>{{team.name}}</h3>
+                                    <span>{{team.position}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+        </div>
+        <div class="body-accodian">
+            <h1 class="h1-1">FAQ</h1>
+<div class="row">
+<div class="col-lg06 col-md-6 col-sm-12">
+    <details class="accordion">
+        <summary class="accordion-btn">What makes LOQZ products unique?</summary>
+        <div class="accordion-content">
+            <p>
+                LOQZ products are crafted with a focus on innovation and comfort. <br>Each item is designed to
+                enhance daily life with thoughtful <br>features and modern aesthetics.
+            </p>
+        </div>
+    </details>
+</div>
+<div class="col-lg06 col-md-6 col-sm-12">
+    <details class="accordion">
+        <summary class="accordion-btn">Where can I purchase LOQZ products?</summary>
+        <div class="accordion-content">
+            <p>
+                You can find LOQZ products through our authorized dealers, distributors, and select retail
+                partners. <br> Additionally, explore our official <br> website for an online shopping
+                experience. </p>
+        </div>
+    </details>
+</div>
+<div class="col-lg06 col-md-6 col-sm-12">
+    <details class="accordion">
+        <summary class="accordion-btn">How do I contact LOQZ customer support?</summary>
+        <div class="accordion-content">
+            <p>
+                For any inquiries or assistance, please reach out to our dedicated customer support team <br>
+                through the contact information provided on our website. <br> We are here to help you! </p>
+        </div>
+    </details>
+</div>
+<div class="col-lg06 col-md-6 col-sm-12">
+    <details class="accordion">
+        <summary class="accordion-btn">Are LOQZ products eco-friendly?
+        </summary>
+        <div class="accordion-content">
+            <p>
+                Yes, sustainability is a priority at LOQZ. <br> We are committed to responsible manufacturing
+                practices and <br> aim to minimize our environmental impact </p>
+        </div>
+    </details>
+</div>
+<div class="col-lg06 col-md-6 col-sm-12">
+    <details class="accordion">
+        <summary class="accordion-btn">Can I become a distributor or dealer for LOQZ products?
+        </summary>
+        <div class="accordion-content">
+            <p>
+                We welcome partnerships! To explore distributorship or dealership opportunities, please contact
+                our business development team. Details can be found on our website.
+
+            </p>
+        </div>
+    </details>
+</div>
+<div class="col-lg06 col-md-6 col-sm-12">
+    <details class="accordion">
+        <summary class="accordion-btn">How can I stay updated on new LOQZ product launches?</summary>
+        <div class="accordion-content">
+            <p>
+                Stay in the loop by following us on social media platforms and subscribing to our newsletter.
+                <br> Be the first to know about our latest innovations, <br> promotions, and more.
+            </p>
+        </div>
+    </details>
+</div>
+<div class="col-lg06 col-md-6 col-sm-12">
+    <details class="accordion">
+        <summary class="accordion-btn">Does LOQZ offer custom solutions for specific needs?
+        </summary>
+        <div class="accordion-content">
+            <p>
+                Absolutely! We understand that every customer is unique. <br> Contact our sales team to discuss
+                custom solutions tailored to <br> your specific requirements. </p>
+        </div>
+    </details>
+</div>
+<div class="col-lg06 col-md-6 col-sm-12">
+    <details class="accordion">
+        <summary class="accordion-btn">What is LOQZ's commitment to sustainability?</summary>
+        <div class="accordion-content">
+            <p>
+                LOQZ is dedicated to sustainable practices. <br> Learn more about our environmental initiatives
+                on our website, <br> where we detail our efforts to contribute to a greener future. </p>
+        </div>
+    </details>
+</div>
+<div class="col-lg06 col-md-6 col-sm-12">
+    <details class="accordion">
+        <summary class="accordion-btn">How does LOQZ ensure product quality?
+        </summary>
+        <div class="accordion-content">
+            <p>
+                Quality is at the core of our brand. Our products undergo rigorous testing to meet industry
+                standards, <br>ensuring durability, functionality, and customer satisfaction.
+
+            </p>
+        </div>
+    </details>
+</div>
+<div class="col-lg06 col-md-6 col-sm-12">
+    
+    <details class="accordion">
+        <summary class="accordion-btn">Can I suggest product ideas or improvements to LOQZ?</summary>
+        <div class="accordion-content">
+            <p>
+                Absolutely! We value customer feedback. If you have ideas or suggestions,<br> feel free to
+                contact us through the provided channels. <br> Your input is important to us!
+            </p>
+        </div>
+    </details>
+</div>
+
+        </div>
+            </div>
+        </div>
+    </div>
+    </div>
+        {% endblock %}
+        

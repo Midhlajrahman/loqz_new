@@ -1,0 +1,118 @@
+
+
+{% load static %}
+<footer class="footer-area">
+    <div class="bg-gray-2">
+        <div class="container">
+            <div class="footer-top pt-30 pb-35">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                        <div class="footer-widget footer-about mb-40">
+                            <div class="footer-logo">
+                                <a href="{% url "web:index" %}"><img src="{% static 'web/assets/images/Products/logo.svg' %}" alt="logo"></a>
+                            </div>
+                            <p> “Where Comfort Meets Design and Durability Finds its Home.”</p>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                        <div class="footer-widget footer-widget-margin-1 footer-list mb-40">
+                            <h3 class="footer-title">Quick Links</h3>
+                            <ul>
+                                <li><a href="{% url "web:index" %}">Home</a></li>
+                                <li><a href="{% url "web:about"%}"> About Us</a></li>
+                                <li><a href="{% url "web:product" %}">Products</a></li>
+                                <li><a href="{% url "web:updates" %}">Updates</a></li>
+                                <li><a href="{% url "web:contact" %}">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-12">
+                        <div class="footer-widget footer-list mb-40">
+                            <h3 class="footer-title">social Media</h3>
+                            <ul>
+                                <li><a href="my-account.html">My Account</a></li>
+                                <li><a href="#">Instagram</a></li>
+                                <li><a href="wishlist.html">Facebook</a></li>
+                                <li><a href="#">Youtube</a></li>
+                                <li><a href="#">linkedin</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                        <div class="footer-widget footer-widget-margin-2 footer-address mb-40">
+                            <h3 class="footer-title">Get in Touch</h3>
+                            <ul>
+                                <li><span>Shop: </span>Alinchuvadu-Neerad Rd,
+
+                                </li>
+                                <li><span> Mele Kizhisseri, </span> Neerad, Kerala 673638 </li>
+                                <li><span>Email: </span>info@loqz.in</li>
+                            </ul>
+                            <div class="open-tim">
+                                <p>Call: <span>+91 94462 12836</span></p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-gray-3">
+        <div class="container">
+            <div class="footer-bottom copyright text-center bg-gray-3">
+                <p>© COPYRIGHT 2024, ALL RIGHT RESERVED BY GEDEXO TECHNOLOGIES</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--          -->
+<!-- Product Modal end -->
+<!-- Mobile Menu start -->
+<div class="off-canvas-active">
+    <a class="off-canvas-close"><i class=" ti-close "></i></a>
+    <div class="off-canvas-wrap">
+        <div class="welcome-text off-canvas-margin-padding">
+            <p>Welcome To <span class="loqz-class"> Loqz </span></p>
+        </div>
+        <div class="mobile-menu-wrap off-canvas-margin-padding-2">
+            <div id="mobile-menu" class="slinky-mobile-menu text-left">
+                <ul>
+                    <li>
+                        <a href="{% url "web:index" %}">HOME</a>
+
+                    </li>
+                    <li>
+                        <a href="{% url "web:about" %}">ABOUT US</a>
+
+                    </li>
+                    <li>
+                        <a href="{% url "web:product" %}">PRODUCTS</a>
+
+                    </li>
+                    <li>
+                        <a href="{% url "web:updates" %}">UPDATES</a>
+                    </li>
+                    <li>
+                        <a href="{% url "web:contact" %}">CONTACT US</a>
+
+                    </li>
+                    <li>
+                        <a href="{% url "web:dealership" %}">DEALERSHIP</a>
+
+                    </li>
+                </ul>
+                </li>
+                <li>
+                    <a href="#"></a>
+
+                </li>
+                </ul>
+            </div>
+        </div>
+        <div class="language-currency-wrap language-currency-wrap-modify">
+
+        </div>
+    </div>
+</div>
