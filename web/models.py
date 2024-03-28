@@ -45,7 +45,7 @@ class Updates(models.Model):
     detail_image=models.ImageField(upload_to='updates_/detail')
     title=models.CharField(max_length=50)
     date=models.DateField(blank=True,null=True)
-    description= HTMLField()
+    description = HTMLField()
     slug = models.SlugField(blank=True,null=True)
 
     def get_absolute_url(self):
