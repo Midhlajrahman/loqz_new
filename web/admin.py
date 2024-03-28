@@ -12,7 +12,7 @@ class ContactAdmin(admin.ModelAdmin):
 
 @admin.register(Updates)
 class UpdatesAdmin(admin.ModelAdmin):
-    list_display = ('title','description',)
+    list_display = ('title',)
     prepopulated_fields = {"slug": ("title",)}
 
 class ProductImageInline(admin.TabularInline):
@@ -27,13 +27,13 @@ class ProductFeatureInline(admin.TabularInline):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('title', 'description',)
+    list_display = ('title',)
     inlines = [ProductImageInline,ProductFeatureInline,]
     prepopulated_fields = {"slug": ("title",)}
 
 @admin.register(Testimonial)
 class TestimonialAdmin(admin.ModelAdmin):
-    list_display =('name','description','image','position',)
+    list_display =('name','position',)
 
 @admin.register(Dealership)
 class DealershipAdmin(admin.ModelAdmin):
