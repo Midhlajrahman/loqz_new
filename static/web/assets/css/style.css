@@ -7630,7 +7630,7 @@ textarea {
   -webkit-transform: skewY(5deg);
       -ms-transform: skewY(5deg);
           transform: skewY(5deg);
-  border-bottom: 2px solid #dedbdb;
+  /* border-bottom: 2px solid #dedbdb; */
   left: 0;
   opacity: 0;
   visibility: hidden;
@@ -7675,7 +7675,7 @@ textarea {
   position: absolute;
   bottom: -32px;
   right: -2px;
-  background-color: #dedbdb;
+  /* background-color: #dedbdb; */
   opacity: 0;
   visibility: hidden;
 }
