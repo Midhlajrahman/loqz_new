@@ -47,6 +47,9 @@ class Updates(models.Model):
     date=models.DateField(blank=True,null=True)
     description = HTMLField()
     slug = models.SlugField(blank=True,null=True)
+    meta_title = models.CharField(max_length=250,blank=True,null=True)
+    meta_description = models.TextField(blank=True,null=True)
+    meta_image = models.ImageField(upload_to="MetaImage/",blank=True,null=True)
 
     def get_absolute_url(self):
         return reverse("web:update_details", kwargs={"slug": self.slug})
@@ -109,8 +112,6 @@ class Dealership(models.Model):
 
     def __str__(self):
         return self.firm_name
-    
-
 
     
 
