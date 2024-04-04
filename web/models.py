@@ -43,7 +43,7 @@ class ProductFeature(models.Model):
 class Updates(models.Model):
     image=models.ImageField(upload_to='updates/')
     detail_image=models.ImageField(upload_to='updates_/detail')
-    title=models.CharField(max_length=50)
+    title=models.CharField(max_length=250)
     date=models.DateField(blank=True,null=True)
     description = HTMLField()
     slug = models.SlugField(blank=True,null=True)

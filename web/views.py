@@ -15,7 +15,7 @@ def index(request):
         'updates'  : updates,
         'fablock_ace' : fablock_ace,
         'testimonials' : testimonials,
-         "smart_fablock_plus" :  smart_fablock_plus,
+        "smart_fablock_plus" :  smart_fablock_plus,
 
     }
     return render(request ,'web/index.html',context)
