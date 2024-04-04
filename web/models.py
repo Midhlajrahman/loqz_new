@@ -59,7 +59,7 @@ class Updates(models.Model):
     
 
 class Team(models.Model):
-    name=models.CharField(max_length=50)
+    name=models.CharField(max_length=250)
     image=models.ImageField(upload_to='team/')
     position=models.CharField(max_length=200)
 
@@ -70,7 +70,7 @@ class Team(models.Model):
 class Contact(models.Model):
     name=models.CharField(max_length=200)
     email=models.EmailField()
-    subject=models.CharField(max_length=200)
+    subject=models.CharField(max_length=250)
     number=models.IntegerField()
     message=models.TextField()
 
@@ -101,13 +101,13 @@ class Dealership(models.Model):
     whatsapp_number=models.IntegerField(blank=True , null=True)
     address = models.CharField(max_length=200)
     pincode = models.IntegerField()
-    state = models.CharField(max_length=150)
+    state = models.CharField(max_length=250)
     city = models.CharField(max_length=150)
-    business = models.CharField(max_length=200)
+    business = models.CharField(max_length=260)
     year_of_experience = models.CharField(max_length=150)
-    brand_handled=models.CharField(max_length=200)
-    annual_turnover=models.CharField(max_length=200)
-    interest = models.CharField(max_length=100,choices=DEALERSHIP_CHOICES)
+    brand_handled=models.CharField(max_length=250)
+    annual_turnover=models.CharField(max_length=250)
+    interest = models.CharField(max_length=260,choices=DEALERSHIP_CHOICES)
     why_loqz = models.TextField() 
 
     def __str__(self):
