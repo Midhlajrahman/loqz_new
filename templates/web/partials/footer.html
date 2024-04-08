@@ -19,11 +19,12 @@
                         <div class="footer-widget footer-widget-margin-1 footer-list mb-40">
                             <h3 class="footer-title">Quick Links</h3>
                             <ul>
-                                <li><a href="{% url "web:index" %}">Home</a></li>
-                                <li><a href="{% url "web:about"%}"> About Us</a></li>
-                                <li><a href="{% url "web:product" %}">Products</a></li>
-                                <li><a href="{% url "web:updates" %}">Updates</a></li>
-                                <li><a href="{% url "web:contact" %}">Contact</a></li>
+                                <li><a href="{% url 'web:index' %}">Home</a></li>
+                                <li><a href="{% url 'web:about'%}"> About Us</a></li>
+                                <li><a href="{% url 'web:product' %}">Products</a></li>
+                                <li><a href="{% url 'web:updates' %}">Updates</a></li>
+                                <li><a href="{% url 'web:contact' %}">Contact</a></li>
+                                <li><a href="{% url 'web:career' %}">Career</a></li>
                             </ul>
                         </div>
                     </div>
@@ -46,7 +47,7 @@
 
                                 </li>
                                 <li><span> BUILDING NO-15/242 D.E,</span> NEAR KSEB SUBSTATION,ALINCHUVAD,KUZHIMANNA PO,MALAPPURAM-673641</li>
-                                <li><span>Email: </span>info@loqz.in</li>
+                                <li><span>Email: </span><a href="mailto:info@loqz.in">info@loqz.in</a></li>
                             </ul>
                             <div class="open-tim">
                                 <p>Call: <span>+91 85928 81193 </span></p>
@@ -99,6 +100,10 @@
                     </li>
                     <li>
                         <a href="{% url "web:dealership" %}">DEALERSHIP</a>
+
+                    </li>
+                    <li>
+                        <li><a href="{% url "web:gallery" %}">Gallery</a></li>
 
                     </li>
                 </ul>

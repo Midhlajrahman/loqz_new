@@ -112,6 +112,15 @@ class Dealership(models.Model):
 
     def __str__(self):
         return self.firm_name
-
     
 
+
+class Career(models.Model):
+    name = models.CharField(max_length=200)
+    email = models.EmailField()
+    phone = models.IntegerField()
+    cv = models.FileField(upload_to="cv")
+    message = models.TextField()
+    
+    def __str__(self):
+        return self.name

@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from .models import Updates,Team,Product,Testimonial
+from .models import Updates,Team,Product,Testimonial,Career
 from django.http import JsonResponse
-from .forms import ContactForm,DealershipForm
+from .forms import ContactForm,DealershipForm,CareerForm
 from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
@@ -115,3 +115,32 @@ def dealership(request):
             "form": form,
         }
         return render(request, "web/dealership.html", context)
+
+def gallery(request):
+    return render(request,'web/gallery.html')
+
+
+def career(request):
+    if request.method == "POST":
+        form = CareerForm(request.POST, request.FILES)  # Pass request.FILES for file uploads
+        if form.is_valid():
+            form.save()
+            response_data = {
+                "status": "true",
+                "title": "Successfully Submitted",
+                "message": "Message successfully updated",
+            }
+            return JsonResponse(response_data)
+        else:
+            errors = form.errors.as_json()  # Convert errors to JSON
+            response_data = {"status": "false", "title": "Form validation error", "errors": errors}
+            return JsonResponse(response_data, status=400)  # Return status 400 for bad request
+
+    else:
+        form = CareerForm()
+    
+    context = {
+        "form": form,
+    }
+
+    return render(request, 'web/career.html', context)

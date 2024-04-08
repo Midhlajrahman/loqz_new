@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import widgets
-from .models import Contact,Dealership
+from .models import Contact,Dealership,Career
 
 
 class ContactForm(forms.ModelForm):
@@ -46,3 +46,8 @@ class DealershipForm(forms.ModelForm):
             "why_loqz": forms.Textarea(attrs={"class": "required", "placeholder": "Reasons To Show Interest In Loqz Brand *"}),
             "whatsapp_number": forms.NumberInput(attrs={"class": "required", "placeholder": "Whatsapp number*"}),
         }
+
+class CareerForm(forms.ModelForm):
+    class Meta:
+        model = Career
+        fields = "__all__"

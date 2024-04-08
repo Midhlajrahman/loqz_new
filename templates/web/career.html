@@ -1,0 +1,46 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+<div class="contact-form-area pt-90 pb-100">
+    <div class="container">
+        <div class="section-title-4 text-center mb-55" data-aos="fade-up" data-aos-delay="200">
+            <h2>Career</h2>
+        </div>
+        <div class="contact-form-wrap" data-aos="fade-up" data-aos-delay="200">
+            <form class="contact-form-style ajax reload" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label for="id_name">Your Name</label>
+                        {{ form.name }}
+                        {{ form.name.errors }}  <!-- Add error messages for name field -->
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="id_email">Email</label>
+                        {{ form.email }}
+                        {{ form.email.errors }}  <!-- Add error messages for email field -->
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="id_phone">Your Phone</label>
+                        {{ form.phone }}
+                        {{ form.phone.errors }}  <!-- Add error messages for phone field -->
+                    </div>
+                    <div class="col-lg-6 cv">
+                        <label for="id_cv">CV</label>
+                        {{ form.cv }}
+                        {{ form.cv.errors }}  <!-- Add error messages for CV field -->
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="id_message">Your Message</label>
+                        {{ form.message }}
+                        {{ form.message.errors }}  <!-- Add error messages for message field -->
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-12 contact-us-btn btn-hover" style="display: flex;justify-content: center;">
+                        <button class="submit primary_btn" type="submit">SEND MESSAGE</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -26,5 +26,7 @@ urlpatterns = [
   path('product_details/<slug:slug>/',views.product_details,name='product_details'),
   path('update_details/<slug:slug>/',views.update_details,name='update_details'),
   path('dealership/',views.dealership,name='dealership'),
+  path('gallery/',views.gallery,name='gallery'),
+  path('career/',views.career,name='career')
 
 ]
