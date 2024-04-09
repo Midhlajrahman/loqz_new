@@ -46,61 +46,56 @@
                             </div>
                         </div>
                     </div>
-                     <div class="col-lg-7">
-                        
+                    <div class="col-lg-7 p-lg-5">
                         <div class="row">
                            
-                            <div class="col-md-6 col-12 col-sm-6">
-                                <div class="easyzoom-style mb-30" data-aos="fade-up" data-aos-delay="200">
-                                    <div class="easyzoom easyzoom--overlay">
-                                        <a>
-                                            <img src="{{product.main_image.url}}" alt="hhh">
-                                        </a>
-                                    </div>
+                            <div class="col-md-6 col-12 col-sm-6 small-images p-4 p-lg-0">
+                                <div class="row" data-aos="fade-up" data-aos-delay="400">
+                                    {% for product in product.get_image %}
+                                    <div class="col-6 px-1 py-1"><img class="img-fluid" src="{{product.image.url}}" alt="" data-image-id="{{product.id}}"></div>
+                                    {% endfor %}
                                     
                                 </div>
                             </div>
-                           
-                            <div class="col-md-6 col-12 col-sm-6">
-                                <div class="easyzoom-style mb-30" data-aos="fade-up" data-aos-delay="400">
-                                    <div class="easyzoom easyzoom--overlay">
+
+                            <div class="col-md-6 col-12 col-sm-6 mb-4 mb-lg-0 py-1">
+                                <div class="easyzoom-style  h-100" data-aos="fade-up" data-aos-delay="400">
+                                    <div class="easyzoom easyzoom--overlay h-100">
                                         <a >
-                                            <img src="{{product.sub_image.url}}" alt="">
+                                            <img class=" h-100" src="{{product.main_image.url}}" alt="">
                                         </a>
                                     </div>
                                    
                                 </div>
                             </div>
-                            
+                           
                         </div>
-                    </div> 
-                    
+                    </div>
                 </div>
             </div>
            
             {% else %}
+            
                 <!--second section-->
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="row">
                                
-                                <div class="col-md-6 col-12 col-sm-6">
-                                    <div class="easyzoom-style mb-30" data-aos="fade-up" data-aos-delay="200">
-                                        <div class="easyzoom easyzoom--overlay">
-                                            <a >
-                                                <img src="{{product.sub_image.url}}" alt="hhh">
-                                            </a>
-                                        </div>
-                                       
+                                <div class="col-md-6 col-12 col-sm-6 small-images p-4 p-lg-0">
+                                    <div class="row" data-aos="fade-up" data-aos-delay="400">
+                                        {% for product in product.get_image %}
+                                        <div class="col-6 px-1 py-1"><img class="img-fluid" src="{{product.image.url}}" alt=""></div>
+                                        {% endfor %}
+                                        
                                     </div>
                                 </div>
-                               
-                                <div class="col-md-6 col-12 col-sm-6">
-                                    <div class="easyzoom-style mb-30" data-aos="fade-up" data-aos-delay="400">
-                                        <div class="easyzoom easyzoom--overlay">
+
+                                <div class="col-md-6 col-12 col-sm-6 mb-4 mb-lg-0 py-1">
+                                    <div class="easyzoom-style  h-100" data-aos="fade-up" data-aos-delay="400">
+                                        <div class="easyzoom easyzoom--overlay h-100">
                                             <a >
-                                                <img src="{{product.main_image.url}}" alt="">
+                                                <img class=" h-100" src="{{product.main_image.url}}" alt="">
                                             </a>
                                         </div>
                                        
