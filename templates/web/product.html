@@ -51,7 +51,7 @@
                            
                             <div class="col-md-6 col-12 col-sm-6 small-images p-4 p-lg-0">
                                 <div class="row" data-aos="fade-up" data-aos-delay="400">
-                                    {% for product in product.get_image|slice:":4" %}
+                                    {% for product in product.get_image|slice:"1:5" %}
                                     <div class="col-6 px-1 py-1"><img class="img-fluid" src="{{product.image.url}}" alt="" data-image-id="{{product.id}}"></div>
                                     {% endfor %}
                                     
@@ -62,7 +62,9 @@
                                 <div class="easyzoom-style  h-100" data-aos="fade-up" data-aos-delay="400">
                                     <div class="easyzoom easyzoom--overlay h-100">
                                         <a >
-                                            <img class=" h-100" src="{{product.main_image.url}}" alt="">
+                                            {% for product in product.get_image|slice:":1" %}
+                                            <img class=" h-100" src="{{product.image.url}}" alt="">
+                                            {% endfor %}
                                         </a>
                                     </div>
                                    
@@ -84,10 +86,9 @@
                                
                                 <div class="col-md-6 col-12 col-sm-6 small-images p-4 p-lg-0">
                                     <div class="row" data-aos="fade-up" data-aos-delay="400">
-                                        {% for product in product.get_image|slice:":4" %}
-                                        <div class="col-6 px-1 py-1"><img class="img-fluid" src="{{product.image.url}}" alt=""></div>
+                                        {% for product in product.get_image|slice:"1:5" %}
+                                        <div class="col-6 px-1 py-1"><img class="img-fluid" src="{{product.image.url}}" alt="" data-image-id="{{product.id}}"></div>
                                         {% endfor %}
-                                        
                                     </div>
                                 </div>
 
@@ -95,7 +96,9 @@
                                     <div class="easyzoom-style  h-100" data-aos="fade-up" data-aos-delay="400">
                                         <div class="easyzoom easyzoom--overlay h-100">
                                             <a >
-                                                <img class=" h-100" src="{{product.main_image.url}}" alt="">
+                                                {% for product in product.get_image|slice:":1" %}
+                                                <img class=" h-100" src="{{product.image.url}}" alt="">
+                                                {% endfor %}
                                             </a>
                                         </div>
                                        
