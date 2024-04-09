@@ -51,7 +51,7 @@
                            
                             <div class="col-md-6 col-12 col-sm-6 small-images p-4 p-lg-0">
                                 <div class="row" data-aos="fade-up" data-aos-delay="400">
-                                    {% for product in product.get_image %}
+                                    {% for product in product.get_image|slice:":4" %}
                                     <div class="col-6 px-1 py-1"><img class="img-fluid" src="{{product.image.url}}" alt="" data-image-id="{{product.id}}"></div>
                                     {% endfor %}
                                     
@@ -84,7 +84,7 @@
                                
                                 <div class="col-md-6 col-12 col-sm-6 small-images p-4 p-lg-0">
                                     <div class="row" data-aos="fade-up" data-aos-delay="400">
-                                        {% for product in product.get_image %}
+                                        {% for product in product.get_image|slice:":4" %}
                                         <div class="col-6 px-1 py-1"><img class="img-fluid" src="{{product.image.url}}" alt=""></div>
                                         {% endfor %}
                                         
