@@ -506,3 +506,64 @@ display: none !important;
   width: 107%;
 }
 
+
+
+.beforafterimage-container {
+  position: relative;
+  width: 100%;
+ 
+  height: 500px;/* Adjust as needed */
+  
+}
+
+
+.before-image,
+.after-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.before-image{
+  animation: beforeAnimation 10s infinite ease-in-out;
+  opacity: 1;
+}
+.after-image {
+  animation: afterAnimation 10s infinite ease-in-out;
+  opacity: 0;
+
+}
+
+@keyframes beforeAnimation {
+  0% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes afterAnimation {
+  0% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+
+@media (max-width: 500px){
+  .beforafterimage-container {
+    height: 300px;
+  }
+}
